@@ -16,12 +16,14 @@
         <div class="mb-4">
             <label class="form-label fw-semibold">Foto barang</label>
             <div class="border rounded p-4 text-center bg-light" style="border-style:dashed!important">
-                <div class="mb-2">
+                <div class="mb-2 d-flex justify-content-center align-items-center" style="min-height:100px">
                     @if(isset($barang) && $barang->foto)
-                        <img src="{{ asset('storage/'.$barang->foto) }}" id="previewFoto" style="max-height:100px">
+                        <img src="{{ asset('storage/'.$barang->foto) }}" id="previewFoto"
+                            style="max-height:100px;max-width:100%;object-fit:contain;display:block">
+                        <i class="bi bi-image text-muted fs-1 d-none" id="iconFoto"></i>
                     @else
                         <i class="bi bi-image text-muted fs-1" id="iconFoto"></i>
-                        <img src="" id="previewFoto" style="max-height:100px;display:none">
+                        <img src="" id="previewFoto" style="max-height:100px;max-width:100%;object-fit:contain;display:none">
                     @endif
                 </div>
                 <p class="text-muted small mb-2">Klik untuk memilih foto, atau seret file ke sini<br>Format: JPG, PNG — Maks. 2 MB</p>
